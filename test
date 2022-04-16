@@ -1,0 +1,54 @@
+key_id: "rzp_test_CoRs6prc38MnOt",
+
+keysecret: "67Jvw8dJeOGhhqblINCfLBns"
+
+postman router
+
+localhost:5000/createOrder
+{
+    "amount":"500",
+    "currency":"INR",
+    "receipt":"jdhffdfmksdnfjkeufsdmfsdfu#123123",
+    "notes":{
+        "description":"Best Course for SDE placements",
+        "language":"Available in 4 major Languages JAVA,C/C++, Python, Javascript",
+        "access":"This Course have Lifetime Access"
+    }
+}
+output
+
+{
+    "id": "order_JJuapuWanYoGj7",
+    "entity": "order",
+    "amount": 500,
+    "amount_paid": 0,
+    "amount_due": 500,
+    "currency": "INR",
+    "receipt": "jdhffdfmksdnfjkeufsdmfsdfu#123123",
+    "offer_id": null,
+    "status": "created",
+    "attempts": 0,
+    "notes": {
+        "description": "Best Course for SDE placements",
+        "language": "Available in 4 major Languages JAVA,C/C++, Python, Javascript",
+        "access": "This Course have Lifetime Access"
+    },
+    "created_at": 1650086809
+}
+
+localhost:5000/verifyOrder
+
+{
+    "order_id": "order_JJuapuWanYoGj7",
+    "payment_id": "pay_JJufzxQIhGAsMz"
+}
+x-razorpay-signature:7a631338054a03179490a5ed3c3921532825061fa96f516181ca5388f3debe50,
+
+output
+{
+    "success": true,
+    "message": "Payment has been verified"
+}
+
+
+
